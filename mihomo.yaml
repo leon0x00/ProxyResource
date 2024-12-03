@@ -86,7 +86,11 @@ NodeParam:
     type: http,
     interval: 3600,
     health-check:
-      { enable: true, url: 'http://www.google.com/blank.html', interval: 6 },
+      {
+        enable: true,
+        url: 'https://www.gstatic.com/generate_204',
+        interval: 6,
+      },
   }
 
 # 锚点 - 节点订阅
@@ -116,7 +120,7 @@ UrlTest:
     interval: 6,
     tolerance: 20,
     lazy: true,
-    url: 'http://www.google.com/blank.html',
+    url: 'http://www.gstatic.com/generate_204',
     disable-udp: false,
     timeout: 2000,
     max-failed-times: 3,
@@ -129,7 +133,7 @@ FallBack:
     type: fallback,
     interval: 6,
     lazy: true,
-    url: 'http://www.google.com/blank.html',
+    url: 'http://www.gstatic.com/generate_204',
     disable-udp: false,
     timeout: 2000,
     max-failed-times: 3,
@@ -142,7 +146,7 @@ LoadBalance:
     type: load-balance,
     interval: 6,
     lazy: true,
-    url: 'http://www.google.com/blank.html',
+    url: 'http://www.gstatic.com/generate_204',
     disable-udp: false,
     strategy: consistent-hashing,
     timeout: 2000,
@@ -156,7 +160,7 @@ RuleProviders:
     type: http,
     behavior: classical,
     interval: 3600,
-    format: yaml,
+    format: text,
     proxy: DIRECT,
   }
 
@@ -417,129 +421,107 @@ proxy-groups:
 rule-providers:
   LocalAreaNetwork:
     <<: *RuleProviders
-    path: './rules/LocalAreaNetwork.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/LocalAreaNetwork.yaml'
+    path: './rules/LocalAreaNetwork.list'
+    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/LocalAreaNetwork.list'
 
   UnBan:
     <<: *RuleProviders
-    path: './rules/UnBan.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/UnBan.yaml'
-
-  OwnRules:
-    <<: *RuleProviders
-    path: './rules/OwnRules.yaml'
-    url: 'https://raw.githubusercontent.com/leon0x00/ProxyResource/refs/heads/main/OwnRules.yaml'
+    path: './rules/UnBan.list'
+    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/UnBan.list'
 
   BanAD:
     <<: *RuleProviders
-    path: './rules/BanAD.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/BanAD.yaml'
+    path: './rules/BanAD.list'
+    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/BanAD.list'
 
   BanProgramAD:
     <<: *RuleProviders
-    path: './rules/BanProgramAD.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/BanProgramAD.yaml'
+    path: './rules/BanProgramAD.list'
+    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/BanProgramAD.list'
 
   GoogleCN:
     <<: *RuleProviders
-    path: './rules/GoogleCN.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/GoogleCN.yaml'
+    path: './rules/GoogleCN.list'
+    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list'
 
   SteamCN:
     <<: *RuleProviders
-    path: './rules/SteamCN.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/SteamCN.yaml'
+    path: './rules/SteamCN.list'
+    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/SteamCN.list'
 
   Microsoft:
     <<: *RuleProviders
-    path: './rules/Microsoft.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Microsoft.yaml'
+    path: './rules/Microsoft.list'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.list'
 
   Apple:
     <<: *RuleProviders
-    path: './rules/Apple.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Apple.yaml'
+    path: './rules/Apple.list'
+    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Apple.list'
 
   Telegram:
     <<: *RuleProviders
-    path: './rules/Telegram.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Telegram.yaml'
+    path: './rules/Telegram.list'
+    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list'
 
   OpenAi:
     <<: *RuleProviders
-    path: './rules/OpenAi.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/OpenAi.yaml'
+    path: './rules/OpenAi.list'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.list'
 
-  Epic:
+  Game:
     <<: *RuleProviders
-    path: './rules/Epic.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/Epic.yaml'
-
-  Origin:
-    <<: *RuleProviders
-    path: './rules/Origin.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/Origin.yaml'
-
-  Sony:
-    <<: *RuleProviders
-    path: './rules/Sony.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/Sony.yaml'
-
-  Steam:
-    <<: *RuleProviders
-    path: './rules/Steam.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/Steam.yaml'
-
-  Nintendo:
-    <<: *RuleProviders
-    path: './rules/Nintendo.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/Nintendo.yaml'
+    path: './rules/Game.list'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Game/Game.list'
 
   YouTube:
     <<: *RuleProviders
-    path: './rules/YouTube.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/YouTube.yaml'
+    path: './rules/YouTube.list'
+    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/YouTube.list'
 
   Netflix:
     <<: *RuleProviders
-    path: './rules/Netflix.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/Netflix.yaml'
+    path: './rules/Netflix.list'
+    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Netflix.list'
 
   ChinaMedia:
     <<: *RuleProviders
-    path: './rules/ChinaMedia.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ChinaMedia.yaml'
+    path: './rules/ChinaMedia.list'
+    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/ChinaMedia.list'
 
   ProxyMedia:
     <<: *RuleProviders
-    path: './rules/ProxyMedia.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ProxyMedia.yaml'
+    path: './rules/ProxyMedia.list'
+    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/ProxyMedia.list'
 
   ProxyGFWlist:
     <<: *RuleProviders
-    path: './rules/ProxyGFWlist.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ProxyGFWlist.yaml'
+    path: './rules/ProxyGFWlist.list'
+    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/ProxyGFWlist.list'
 
   ChinaDomain:
     <<: *RuleProviders
-    path: './rules/ChinaDomain.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ChinaDomain.yaml'
+    path: './rules/ChinaDomain.list'
+    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/ChinaDomain.list'
 
   ChinaCompanyIp:
     <<: *RuleProviders
-    path: './rules/ChinaCompanyIp.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ChinaCompanyIp.yaml'
+    path: './rules/ChinaCompanyIp.list'
+    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/ChinaCompanyIp.list'
 
   Download:
     <<: *RuleProviders
-    path: './rules/Download.yaml'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Download.yaml'
+    path: './rules/Download.list'
+    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Download.list'
 
 # 规则指向
 rules:
+  - DOMAIN-KEYWORD,yeahfast,DIRECT
+  - DOMAIN-KEYWORD,mooguu,DIRECT
+  - DOMAIN-SUFFIX,zox.show,DIRECT
+
   - RULE-SET, LocalAreaNetwork, 🎯 全球直连
   - RULE-SET, UnBan, 🎯 全球直连
-  - RULE-SET, OwnRules, 🎯 全球直连
   - RULE-SET, BanAD, 🛑 广告拦截
   - RULE-SET, BanProgramAD, 🍃 应用净化
   - RULE-SET, GoogleCN, 🎯 全球直连
@@ -548,11 +530,7 @@ rules:
   - RULE-SET, Apple, 🍎 苹果服务
   - RULE-SET, Telegram, 📲 电报消息
   - RULE-SET, OpenAi, 💬 OpenAi
-  - RULE-SET, Epic, 🎮 游戏平台
-  - RULE-SET, Origin, 🎮 游戏平台
-  - RULE-SET, Sony, 🎮 游戏平台
-  - RULE-SET, Steam, 🎮 游戏平台
-  - RULE-SET, Nintendo, 🎮 游戏平台
+  - RULE-SET, Game, 🎮 游戏平台
   - RULE-SET, YouTube, 📹 油管视频
   - RULE-SET, Netflix, 🎥 奈飞视频
   - RULE-SET, ChinaMedia, 🌏 国内媒体
