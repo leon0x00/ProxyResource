@@ -539,7 +539,7 @@ rule-providers:
 rules:
   - RULE-SET, LocalAreaNetwork, 🎯 全球直连
   - RULE-SET, UnBan, 🎯 全球直连
-  - RULE-SET, ownRules, 🎯 全球直连
+  - RULE-SET, OwnRules, 🎯 全球直连
   - RULE-SET, BanAD, 🛑 广告拦截
   - RULE-SET, BanProgramAD, 🍃 应用净化
   - RULE-SET, GoogleCN, 🎯 全球直连
