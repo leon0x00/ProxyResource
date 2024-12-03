@@ -208,10 +208,10 @@ proxy-groups:
       type: select,
       proxies:
         [
+          🇼🇸 台湾策略,
           🚀 节点选择,
           ♻️ 自动选择,
           🇭🇰 香港策略,
-          🇼🇸 台湾策略,
           🇯🇵 日本策略,
           🇰🇷 韩国策略,
           🇸🇬 新国策略,
@@ -276,6 +276,7 @@ proxy-groups:
       type: select,
       proxies:
         [
+          🎯 全球直连,
           🚀 节点选择,
           ♻️ 自动选择,
           🇭🇰 香港策略,
@@ -285,7 +286,6 @@ proxy-groups:
           🇸🇬 新国策略,
           🇺🇸 美国策略,
           🚀 手动切换,
-          🎯 全球直连,
         ],
     }
   - {
@@ -310,6 +310,7 @@ proxy-groups:
       type: select,
       proxies:
         [
+          🎯 全球直连,
           🚀 节点选择,
           ♻️ 自动选择,
           🇭🇰 香港策略,
@@ -319,7 +320,6 @@ proxy-groups:
           🇸🇬 新国策略,
           🇺🇸 美国策略,
           🚀 手动切换,
-          🎯 全球直连,
         ],
     }
   - {
@@ -327,9 +327,9 @@ proxy-groups:
       type: select,
       proxies:
         [
+          🇭🇰 香港策略,
           🚀 节点选择,
           ♻️ 自动选择,
-          🇭🇰 香港策略,
           🇼🇸 台湾策略,
           🇯🇵 日本策略,
           🇰🇷 韩国策略,
@@ -425,10 +425,10 @@ rule-providers:
     path: './rules/UnBan.yaml'
     url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list'
 
-  ownRules:
+  OwnRules:
     <<: *RuleProviders
-    path: './rules/ownRules.yaml'
-    url: 'https://raw.githubusercontent.com/leon0x00/ProxyResource/refs/heads/main/ownRules.list'
+    path: './rules/OwnRules.yaml'
+    url: 'https://raw.githubusercontent.com/leon0x00/ProxyResource/refs/heads/main/OwnRules.list'
 
   BanAD:
     <<: *RuleProviders
