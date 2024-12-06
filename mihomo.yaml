@@ -1,5 +1,5 @@
 # mihomo 配置
-# 日期：2024-11-27 16:32:51
+# 日期：2024-12-06 10:50:50
 # 配置作者：https://t.me/iKeLee
 # 适用版本：所有使用 mihomo 核心的程序
 port: 7890
@@ -161,7 +161,6 @@ RuleProviders:
     behavior: classical,
     interval: 3600,
     format: text,
-    proxy: DIRECT,
   }
 
 # 策略组
@@ -208,7 +207,7 @@ proxy-groups:
         ],
     }
   - {
-      name: 💬 OpenAi,
+      name: 💬 AI,
       type: select,
       proxies:
         [
@@ -216,6 +215,23 @@ proxy-groups:
           🚀 节点选择,
           ♻️ 自动选择,
           🇭🇰 香港策略,
+          🇯🇵 日本策略,
+          🇰🇷 韩国策略,
+          🇸🇬 新国策略,
+          🇺🇸 美国策略,
+          🚀 手动切换,
+          🎯 全球直连,
+        ],
+    }
+  - {
+      name: 🎵 Spotify,
+      type: select,
+      proxies:
+        [
+          🇭🇰 香港策略,
+          🚀 节点选择,
+          ♻️ 自动选择,
+          🇼🇸 台湾策略,
           🇯🇵 日本策略,
           🇰🇷 韩国策略,
           🇸🇬 新国策略,
@@ -256,40 +272,6 @@ proxy-groups:
           🇺🇸 美国策略,
           🚀 手动切换,
           🎯 全球直连,
-        ],
-    }
-  - {
-      name: 🌍 国外媒体,
-      type: select,
-      proxies:
-        [
-          🚀 节点选择,
-          ♻️ 自动选择,
-          🇭🇰 香港策略,
-          🇼🇸 台湾策略,
-          🇯🇵 日本策略,
-          🇰🇷 韩国策略,
-          🇸🇬 新国策略,
-          🇺🇸 美国策略,
-          🚀 手动切换,
-          🎯 全球直连,
-        ],
-    }
-  - {
-      name: 🌏 国内媒体,
-      type: select,
-      proxies:
-        [
-          🎯 全球直连,
-          🚀 节点选择,
-          ♻️ 自动选择,
-          🇭🇰 香港策略,
-          🇼🇸 台湾策略,
-          🇯🇵 日本策略,
-          🇰🇷 韩国策略,
-          🇸🇬 新国策略,
-          🇺🇸 美国策略,
-          🚀 手动切换,
         ],
     }
   - {
@@ -343,8 +325,7 @@ proxy-groups:
           🎯 全球直连,
         ],
     }
-  - { name: 🛑 广告拦截, type: select, proxies: [REJECT, DIRECT] }
-  - { name: 🍃 应用净化, type: select, proxies: [REJECT, DIRECT] }
+  - { name: 🛑 全球拦截, type: select, proxies: [REJECT, DIRECT] }
   - {
       name: 🐟 漏网之鱼,
       type: select,
@@ -439,6 +420,11 @@ rule-providers:
     path: './rules/BanProgramAD.list'
     url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/BanProgramAD.list'
 
+  BanEasyListChina:
+    <<: *RuleProviders
+    path: './rules/BanEasyListChina.list'
+    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list'
+
   GoogleCN:
     <<: *RuleProviders
     path: './rules/GoogleCN.list'
@@ -448,6 +434,16 @@ rule-providers:
     <<: *RuleProviders
     path: './rules/SteamCN.list'
     url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/SteamCN.list'
+
+  OwnRules:
+    <<: *RuleProviders
+    path: './rules/OwnRules.list'
+    url: 'https://raw.githubusercontent.com/leon0x00/ProxyResource/refs/heads/main/OwnRules.list'
+
+  Tmdb:
+    <<: *RuleProviders
+    path: './rules/Tmdb.list'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Tmdb/Tmdb.list'
 
   Microsoft:
     <<: *RuleProviders
@@ -464,15 +460,15 @@ rule-providers:
     path: './rules/Telegram.list'
     url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list'
 
-  OpenAi:
+  AI:
     <<: *RuleProviders
-    path: './rules/OpenAi.list'
+    path: './rules/AI.list'
     url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.list'
 
-  Game:
+  Spotify:
     <<: *RuleProviders
-    path: './rules/Game.list'
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Game/Game.list'
+    path: './rules/Spotify.list'
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Spotify/Spotify.list'
 
   YouTube:
     <<: *RuleProviders
@@ -483,11 +479,6 @@ rule-providers:
     <<: *RuleProviders
     path: './rules/Netflix.list'
     url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Netflix.list'
-
-  ChinaMedia:
-    <<: *RuleProviders
-    path: './rules/ChinaMedia.list'
-    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/ChinaMedia.list'
 
   ProxyMedia:
     <<: *RuleProviders
@@ -516,25 +507,22 @@ rule-providers:
 
 # 规则指向
 rules:
-  - DOMAIN-KEYWORD,yeahfast,DIRECT
-  - DOMAIN-KEYWORD,mooguu,DIRECT
-  - DOMAIN-SUFFIX,zox.show,DIRECT
-
   - RULE-SET, LocalAreaNetwork, 🎯 全球直连
   - RULE-SET, UnBan, 🎯 全球直连
-  - RULE-SET, BanAD, 🛑 广告拦截
-  - RULE-SET, BanProgramAD, 🍃 应用净化
+  - RULE-SET, BanAD, 🛑 全球拦截
+  - RULE-SET, BanProgramAD, 🛑 全球拦截
   - RULE-SET, GoogleCN, 🎯 全球直连
   - RULE-SET, SteamCN, 🎯 全球直连
+  - RULE-SET, OwnRules, 🎯 全球直连
+  - RULE-SET, Tmdb, 🎯 全球直连
   - RULE-SET, Microsoft, Ⓜ️ 微软服务
   - RULE-SET, Apple, 🍎 苹果服务
   - RULE-SET, Telegram, 📲 电报消息
-  - RULE-SET, OpenAi, 💬 OpenAi
-  - RULE-SET, Game, 🎮 游戏平台
+  - RULE-SET, AI, 💬 AI
+  - RULE-SET, Spotify, 🎵 Spotify
   - RULE-SET, YouTube, 📹 油管视频
   - RULE-SET, Netflix, 🎥 奈飞视频
-  - RULE-SET, ChinaMedia, 🌏 国内媒体
-  - RULE-SET, ProxyMedia, 🌍 国外媒体
+  - RULE-SET, ProxyMedia, 🚀 节点选择
   - RULE-SET, ProxyGFWlist, 🚀 节点选择
   - RULE-SET, ChinaDomain, 🎯 全球直连
   - RULE-SET, ChinaCompanyIp, 🎯 全球直连
