@@ -166,220 +166,252 @@ RuleProviders:
 # 策略组
 proxy-groups:
   - {
-      name: 🚀 节点选择,
+      name: 节点选择,
       type: select,
       proxies:
         [
-          ♻️ 自动选择,
-          🇭🇰 香港策略,
-          🇼🇸 台湾策略,
-          🇯🇵 日本策略,
-          🇰🇷 韩国策略,
-          🇸🇬 新国策略,
-          🇺🇸 美国策略,
-          🚀 手动切换,
-          🎯 全球直连,
+          自动选择,
+          香港策略,
+          台湾策略,
+          日本策略,
+          韩国策略,
+          狮城策略,
+          美国策略,
+          手动切换,
+          全球直连,
         ],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png',
     }
   - {
-      name: 🚀 手动切换,
+      name: 自动选择,
+      <<: *UrlTest,
+      hidden: false,
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Speedtest.png',
+    }
+  - {
+      name: 手动切换,
       type: select,
       include-all-providers: true,
       filter: *FilterAll,
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png',
     }
-  - { name: ♻️ 自动选择, <<: *UrlTest, hidden: false }
-  - { name: 🎯 全球直连, type: select, proxies: [DIRECT] }
   - {
-      name: 📲 电报消息,
+      name: AI,
       type: select,
       proxies:
         [
-          🇸🇬 新国策略,
-          🚀 节点选择,
-          ♻️ 自动选择,
-          🇭🇰 香港策略,
-          🇼🇸 台湾策略,
-          🇯🇵 日本策略,
-          🇰🇷 韩国策略,
-          🇺🇸 美国策略,
-          🚀 手动切换,
-          🎯 全球直连,
+          台湾策略,
+          节点选择,
+          自动选择,
+          香港策略,
+          日本策略,
+          韩国策略,
+          狮城策略,
+          美国策略,
+          手动切换,
+          全球直连,
         ],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/MGNB.png',
     }
   - {
-      name: 💬 AI,
+      name: Spotify,
       type: select,
       proxies:
         [
-          🇼🇸 台湾策略,
-          🚀 节点选择,
-          ♻️ 自动选择,
-          🇭🇰 香港策略,
-          🇯🇵 日本策略,
-          🇰🇷 韩国策略,
-          🇸🇬 新国策略,
-          🇺🇸 美国策略,
-          🚀 手动切换,
-          🎯 全球直连,
+          香港策略,
+          节点选择,
+          自动选择,
+          台湾策略,
+          日本策略,
+          韩国策略,
+          狮城策略,
+          美国策略,
+          手动切换,
+          全球直连,
         ],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Spotify.png',
     }
   - {
-      name: 🎵 Spotify,
+      name: Telegram,
       type: select,
       proxies:
         [
-          🇭🇰 香港策略,
-          🚀 节点选择,
-          ♻️ 自动选择,
-          🇼🇸 台湾策略,
-          🇯🇵 日本策略,
-          🇰🇷 韩国策略,
-          🇸🇬 新国策略,
-          🇺🇸 美国策略,
-          🚀 手动切换,
-          🎯 全球直连,
+          狮城策略,
+          节点选择,
+          自动选择,
+          香港策略,
+          台湾策略,
+          日本策略,
+          韩国策略,
+          美国策略,
+          手动切换,
+          全球直连,
         ],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png',
     }
+
   - {
-      name: 📹 油管视频,
+      name: YouTube,
       type: select,
       proxies:
         [
-          🚀 节点选择,
-          ♻️ 自动选择,
-          🇭🇰 香港策略,
-          🇼🇸 台湾策略,
-          🇯🇵 日本策略,
-          🇰🇷 韩国策略,
-          🇸🇬 新国策略,
-          🇺🇸 美国策略,
-          🚀 手动切换,
-          🎯 全球直连,
+          节点选择,
+          自动选择,
+          香港策略,
+          台湾策略,
+          日本策略,
+          韩国策略,
+          狮城策略,
+          美国策略,
+          手动切换,
+          全球直连,
         ],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/YouTube.png',
     }
   - {
-      name: 🎥 奈飞视频,
+      name: Netflix,
       type: select,
       proxies:
         [
-          🚀 节点选择,
-          ♻️ 自动选择,
-          🇭🇰 香港策略,
-          🇼🇸 台湾策略,
-          🇯🇵 日本策略,
-          🇰🇷 韩国策略,
-          🇸🇬 新国策略,
-          🇺🇸 美国策略,
-          🚀 手动切换,
-          🎯 全球直连,
+          节点选择,
+          自动选择,
+          香港策略,
+          台湾策略,
+          日本策略,
+          韩国策略,
+          狮城策略,
+          美国策略,
+          手动切换,
+          全球直连,
         ],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Netflix.png',
     }
   - {
-      name: Ⓜ️ 微软服务,
+      name: Apple,
       type: select,
       proxies:
         [
-          🚀 节点选择,
-          ♻️ 自动选择,
-          🇭🇰 香港策略,
-          🇼🇸 台湾策略,
-          🇯🇵 日本策略,
-          🇰🇷 韩国策略,
-          🇸🇬 新国策略,
-          🇺🇸 美国策略,
-          🚀 手动切换,
-          🎯 全球直连,
+          全球直连,
+          节点选择,
+          自动选择,
+          香港策略,
+          台湾策略,
+          日本策略,
+          韩国策略,
+          狮城策略,
+          美国策略,
+          手动切换,
         ],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png',
     }
   - {
-      name: 🍎 苹果服务,
+      name: Microsoft,
       type: select,
       proxies:
         [
-          🎯 全球直连,
-          🚀 节点选择,
-          ♻️ 自动选择,
-          🇭🇰 香港策略,
-          🇼🇸 台湾策略,
-          🇯🇵 日本策略,
-          🇰🇷 韩国策略,
-          🇸🇬 新国策略,
-          🇺🇸 美国策略,
-          🚀 手动切换,
+          节点选择,
+          自动选择,
+          香港策略,
+          台湾策略,
+          日本策略,
+          韩国策略,
+          狮城策略,
+          美国策略,
+          手动切换,
+          全球直连,
         ],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png',
     }
-  - { name: 🛑 全球拦截, type: select, proxies: [REJECT, DIRECT] }
   - {
-      name: 🐟 漏网之鱼,
+      name: 全球拦截,
+      type: select,
+      proxies: [REJECT, DIRECT],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Adblock.png',
+    }
+  - {
+      name: 全球直连,
+      type: select,
+      proxies: [DIRECT],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/China.png',
+    }
+  - {
+      name: 漏网之鱼,
       type: select,
       proxies:
         [
-          🚀 节点选择,
-          ♻️ 自动选择,
-          🇭🇰 香港策略,
-          🇼🇸 台湾策略,
-          🇯🇵 日本策略,
-          🇰🇷 韩国策略,
-          🇸🇬 新国策略,
-          🇺🇸 美国策略,
-          🚀 手动切换,
-          🎯 全球直连,
+          节点选择,
+          自动选择,
+          香港策略,
+          台湾策略,
+          日本策略,
+          韩国策略,
+          狮城策略,
+          美国策略,
+          手动切换,
+          全球直连,
         ],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png',
     }
   - {
-      name: 🇭🇰 香港策略,
+      name: 香港策略,
       type: select,
-      proxies: [⏱香港时延优选策略组, 🚥香港故障转移策略组, 🎛香港负载均衡策略组],
+      proxies: [香港时延优选策略组, 香港故障转移策略组, 香港负载均衡策略组],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png',
     }
   - {
-      name: 🇼🇸 台湾策略,
+      name: 台湾策略,
       type: select,
-      proxies: [⏱台湾时延优选策略组, 🚥台湾故障转移策略组, 🎛台湾负载均衡策略组],
+      proxies: [台湾时延优选策略组, 台湾故障转移策略组, 台湾负载均衡策略组],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png',
     }
   - {
-      name: 🇯🇵 日本策略,
+      name: 日本策略,
       type: select,
-      proxies: [⏱日本时延优选策略组, 🚥日本故障转移策略组, 🎛日本负载均衡策略组],
+      proxies: [日本时延优选策略组, 日本故障转移策略组, 日本负载均衡策略组],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png',
     }
   - {
-      name: 🇰🇷 韩国策略,
+      name: 韩国策略,
       type: select,
-      proxies: [⏱韩国时延优选策略组, 🚥韩国故障转移策略组, 🎛韩国负载均衡策略组],
+      proxies: [韩国时延优选策略组, 韩国故障转移策略组, 韩国负载均衡策略组],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/KR.png',
     }
   - {
-      name: 🇸🇬 新国策略,
+      name: 狮城策略,
       type: select,
-      proxies: [⏱新国时延优选策略组, 🚥新国故障转移策略组, 🎛新国负载均衡策略组],
+      proxies: [狮城时延优选策略组, 狮城故障转移策略组, 狮城负载均衡策略组],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png',
     }
   - {
-      name: 🇺🇸 美国策略,
+      name: 美国策略,
       type: select,
-      proxies: [⏱美国时延优选策略组, 🚥美国故障转移策略组, 🎛美国负载均衡策略组],
+      proxies: [美国时延优选策略组, 美国故障转移策略组, 美国负载均衡策略组],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png',
     }
 
   # 时延优选策略组
-  - { name: ⏱香港时延优选策略组, <<: *UrlTest, filter: *FilterHK }
-  - { name: ⏱台湾时延优选策略组, <<: *UrlTest, filter: *FilterTW }
-  - { name: ⏱日本时延优选策略组, <<: *UrlTest, filter: *FilterJP }
-  - { name: ⏱韩国时延优选策略组, <<: *UrlTest, filter: *FilterKR }
-  - { name: ⏱新国时延优选策略组, <<: *UrlTest, filter: *FilterSG }
-  - { name: ⏱美国时延优选策略组, <<: *UrlTest, filter: *FilterUS }
+  - { name: 香港时延优选策略组, <<: *UrlTest, filter: *FilterHK }
+  - { name: 台湾时延优选策略组, <<: *UrlTest, filter: *FilterTW }
+  - { name: 日本时延优选策略组, <<: *UrlTest, filter: *FilterJP }
+  - { name: 韩国时延优选策略组, <<: *UrlTest, filter: *FilterKR }
+  - { name: 狮城时延优选策略组, <<: *UrlTest, filter: *FilterSG }
+  - { name: 美国时延优选策略组, <<: *UrlTest, filter: *FilterUS }
 
   # 故障转移策略组
-  - { name: 🚥香港故障转移策略组, <<: *FallBack, filter: *FilterHK }
-  - { name: 🚥台湾故障转移策略组, <<: *FallBack, filter: *FilterTW }
-  - { name: 🚥日本故障转移策略组, <<: *FallBack, filter: *FilterJP }
-  - { name: 🚥韩国故障转移策略组, <<: *FallBack, filter: *FilterKR }
-  - { name: 🚥新国故障转移策略组, <<: *FallBack, filter: *FilterSG }
-  - { name: 🚥美国故障转移策略组, <<: *FallBack, filter: *FilterUS }
+  - { name: 香港故障转移策略组, <<: *FallBack, filter: *FilterHK }
+  - { name: 台湾故障转移策略组, <<: *FallBack, filter: *FilterTW }
+  - { name: 日本故障转移策略组, <<: *FallBack, filter: *FilterJP }
+  - { name: 韩国故障转移策略组, <<: *FallBack, filter: *FilterKR }
+  - { name: 狮城故障转移策略组, <<: *FallBack, filter: *FilterSG }
+  - { name: 美国故障转移策略组, <<: *FallBack, filter: *FilterUS }
 
   # 负载均衡策略组
-  - { name: 🎛香港负载均衡策略组, <<: *LoadBalance, filter: *FilterHK }
-  - { name: 🎛台湾负载均衡策略组, <<: *LoadBalance, filter: *FilterTW }
-  - { name: 🎛日本负载均衡策略组, <<: *LoadBalance, filter: *FilterJP }
-  - { name: 🎛韩国负载均衡策略组, <<: *LoadBalance, filter: *FilterKR }
-  - { name: 🎛新国负载均衡策略组, <<: *LoadBalance, filter: *FilterSG }
-  - { name: 🎛美国负载均衡策略组, <<: *LoadBalance, filter: *FilterUS }
+  - { name: 香港负载均衡策略组, <<: *LoadBalance, filter: *FilterHK }
+  - { name: 台湾负载均衡策略组, <<: *LoadBalance, filter: *FilterTW }
+  - { name: 日本负载均衡策略组, <<: *LoadBalance, filter: *FilterJP }
+  - { name: 韩国负载均衡策略组, <<: *LoadBalance, filter: *FilterKR }
+  - { name: 狮城负载均衡策略组, <<: *LoadBalance, filter: *FilterSG }
+  - { name: 美国负载均衡策略组, <<: *LoadBalance, filter: *FilterUS }
 
 # 订阅规则
 rule-providers:
@@ -490,26 +522,26 @@ rule-providers:
 
 # 规则指向
 rules:
-  - RULE-SET, LocalAreaNetwork, 🎯 全球直连
-  - RULE-SET, UnBan, 🎯 全球直连
-  - RULE-SET, BanAD, 🛑 全球拦截
-  - RULE-SET, BanProgramAD, 🛑 全球拦截
-  - RULE-SET, BanEasyListChina, 🛑 全球拦截
-  - RULE-SET, GoogleCN, 🎯 全球直连
-  - RULE-SET, SteamCN, 🎯 全球直连
-  - RULE-SET, OwnRules, 🎯 全球直连
-  - RULE-SET, Tmdb, 🎯 全球直连
-  - RULE-SET, Microsoft, Ⓜ️ 微软服务
-  - RULE-SET, Apple, 🍎 苹果服务
-  - RULE-SET, Telegram, 📲 电报消息
-  - RULE-SET, AI, 💬 AI
-  - RULE-SET, Spotify, 🎵 Spotify
-  - RULE-SET, YouTube, 📹 油管视频
-  - RULE-SET, Netflix, 🎥 奈飞视频
-  - RULE-SET, ProxyMedia, 🚀 节点选择
-  - RULE-SET, ProxyGFWlist, 🚀 节点选择
-  - RULE-SET, ChinaDomain, 🎯 全球直连
-  - RULE-SET, ChinaCompanyIp, 🎯 全球直连
-  - RULE-SET, Download, 🎯 全球直连
-  - GEOIP, CN, 🎯 全球直连
-  - MATCH, 🐟 漏网之鱼
+  - RULE-SET, LocalAreaNetwork, 全球直连
+  - RULE-SET, UnBan, 全球直连
+  - RULE-SET, BanAD, 全球拦截
+  - RULE-SET, BanProgramAD, 全球拦截
+  - RULE-SET, BanEasyListChina, 全球拦截
+  - RULE-SET, GoogleCN, 全球直连
+  - RULE-SET, SteamCN, 全球直连
+  - RULE-SET, OwnRules, 全球直连
+  - RULE-SET, Tmdb, 全球直连
+  - RULE-SET, Microsoft, Microsoft
+  - RULE-SET, Apple, Apple
+  - RULE-SET, Telegram, Telegram
+  - RULE-SET, AI, AI
+  - RULE-SET, Spotify, Spotify
+  - RULE-SET, YouTube, YouTube
+  - RULE-SET, Netflix, Netflix
+  - RULE-SET, ProxyMedia, 节点选择
+  - RULE-SET, ProxyGFWlist, 节点选择
+  - RULE-SET, ChinaDomain, 全球直连
+  - RULE-SET, ChinaCompanyIp, 全球直连
+  - RULE-SET, Download, 全球直连
+  - GEOIP, CN, 全球直连
+  - MATCH, 漏网之鱼
