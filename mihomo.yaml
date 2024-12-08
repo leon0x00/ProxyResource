@@ -194,13 +194,13 @@ proxy-groups:
       type: select,
       proxies:
         [
-          🇭🇰 香港策略,
+          🇸🇬 新国策略,
           🚀 节点选择,
           ♻️ 自动选择,
+          🇭🇰 香港策略,
           🇼🇸 台湾策略,
           🇯🇵 日本策略,
           🇰🇷 韩国策略,
-          🇸🇬 新国策略,
           🇺🇸 美国策略,
           🚀 手动切换,
           🎯 全球直连,
@@ -306,23 +306,6 @@ proxy-groups:
           🇸🇬 新国策略,
           🇺🇸 美国策略,
           🚀 手动切换,
-        ],
-    }
-  - {
-      name: 🎮 游戏平台,
-      type: select,
-      proxies:
-        [
-          🇭🇰 香港策略,
-          🚀 节点选择,
-          ♻️ 自动选择,
-          🇼🇸 台湾策略,
-          🇯🇵 日本策略,
-          🇰🇷 韩国策略,
-          🇸🇬 新国策略,
-          🇺🇸 美国策略,
-          🚀 手动切换,
-          🎯 全球直连,
         ],
     }
   - { name: 🛑 全球拦截, type: select, proxies: [REJECT, DIRECT] }
@@ -511,6 +494,7 @@ rules:
   - RULE-SET, UnBan, 🎯 全球直连
   - RULE-SET, BanAD, 🛑 全球拦截
   - RULE-SET, BanProgramAD, 🛑 全球拦截
+  - RULE-SET, BanEasyListChina, 🛑 全球拦截
   - RULE-SET, GoogleCN, 🎯 全球直连
   - RULE-SET, SteamCN, 🎯 全球直连
   - RULE-SET, OwnRules, 🎯 全球直连
