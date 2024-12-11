@@ -455,11 +455,6 @@ rule-providers:
     path: './rules/OwnRules.list'
     url: 'https://raw.githubusercontent.com/leon0x00/ProxyResource/refs/heads/main/OwnRules.list'
 
-  Tmdb:
-    <<: *RuleProviders
-    path: './rules/Tmdb.list'
-    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Tmdb/Tmdb.list'
-
   Microsoft:
     <<: *RuleProviders
     path: './rules/Microsoft.list'
@@ -530,7 +525,6 @@ rules:
   - RULE-SET, GoogleCN, 全球直连
   - RULE-SET, SteamCN, 全球直连
   - RULE-SET, OwnRules, 全球直连
-  - RULE-SET, Tmdb, 全球直连
   - RULE-SET, Microsoft, Microsoft
   - RULE-SET, Apple, Apple
   - RULE-SET, Telegram, Telegram
