@@ -214,6 +214,42 @@ proxy-groups:
       icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png',
     }
   - {
+      name: 终点站,
+      type: select,
+      proxies:
+        [
+          节点选择,
+          自动选择,
+          香港策略,
+          台湾策略,
+          日本策略,
+          韩国策略,
+          狮城策略,
+          美国策略,
+          手动切换,
+          全球直连,
+        ],
+      icon: 'https://raw.githubusercontent.com/black2c7/Emby-icons/main/Icons/ZDZ2.png',
+    }
+  - {
+      name: Emby,
+      type: select,
+      proxies:
+        [
+          节点选择,
+          自动选择,
+          香港策略,
+          台湾策略,
+          日本策略,
+          韩国策略,
+          狮城策略,
+          美国策略,
+          手动切换,
+          全球直连,
+        ],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Emby111.png',
+    }
+  - {
       name: Spotify,
       type: select,
       proxies:
@@ -249,7 +285,6 @@ proxy-groups:
         ],
       icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png',
     }
-
   - {
       name: YouTube,
       type: select,
@@ -475,6 +510,16 @@ rule-providers:
     path: './rules/AI.list'
     url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.list'
 
+  ZDZ:
+    <<: *RuleProviders
+    path: './rules/ZDZ.list'
+    url: 'https://raw.githubusercontent.com/leon0x00/ProxyResource/refs/heads/main/ZDZ.list'
+
+  Emby:
+    <<: *RuleProviders
+    path: './rules/Emby.list'
+    url: 'https://raw.githubusercontent.com/leon0x00/ProxyResource/refs/heads/main/Emby.list'
+
   Spotify:
     <<: *RuleProviders
     path: './rules/Spotify.list'
@@ -524,7 +569,8 @@ rules:
   - RULE-SET, BanEasyListChina, 全球拦截
   - RULE-SET, GoogleCN, 全球直连
   - RULE-SET, SteamCN, 全球直连
-  - RULE-SET, OwnRules, 全球直连
+  - RULE-SET, ZDZ, 终点站
+  - RULE-SET, Emby, Emby
   - RULE-SET, Microsoft, Microsoft
   - RULE-SET, Apple, Apple
   - RULE-SET, Telegram, Telegram
