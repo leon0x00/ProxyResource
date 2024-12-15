@@ -236,6 +236,7 @@ proxy-groups:
       type: select,
       proxies:
         [
+          全球直连,
           节点选择,
           自动选择,
           香港策略,
@@ -245,9 +246,8 @@ proxy-groups:
           狮城策略,
           美国策略,
           手动切换,
-          全球直连,
         ],
-      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Emby111.png',
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Emby.png',
     }
   - {
       name: Spotify,
