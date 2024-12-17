@@ -110,7 +110,8 @@ FilterKR: &FilterKR '^(?=.*((?i)🇰🇷|韩国|韓|首尔|(\b(KR|Korea)(\d+)?\b
 FilterSG: &FilterSG '^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$'
 FilterUS: &FilterUS '^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$'
 FilterGame: &FilterGame '^(?=.*((?i)游戏|🎮|(\b(GAME)(\d+)?\b)))(?!.*((?i)回国|校园)).*$'
-FilterAll: &FilterAll '^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)(\d+)?\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$'
+FilterAll: &FilterAll '^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic)(\d+)?\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$'
+FilterTest: &FilterTest '^(?=.*实验).*$'
 
 # 策略组参数锚点
 # 锚点 - 时延优选参数 [每 6 秒一次惰性健康检查，容差 20ms，时延超过 2 秒判定为失败，失败 3 次则自动触发健康检查]
@@ -171,13 +172,14 @@ proxy-groups:
       proxies:
         [
           自动选择,
+          实验策略,
           香港策略,
           台湾策略,
           日本策略,
           韩国策略,
           狮城策略,
           美国策略,
-          手动切换,
+          全球手动,
           全球直连,
         ],
       icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png',
@@ -189,7 +191,7 @@ proxy-groups:
       icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Speedtest.png',
     }
   - {
-      name: 手动切换,
+      name: 全球手动,
       type: select,
       include-all-providers: true,
       filter: *FilterAll,
@@ -202,13 +204,13 @@ proxy-groups:
         [
           台湾策略,
           节点选择,
-          自动选择,
+          实验策略,
           香港策略,
           日本策略,
           韩国策略,
           狮城策略,
           美国策略,
-          手动切换,
+          全球手动,
           全球直连,
         ],
       icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png',
@@ -218,15 +220,15 @@ proxy-groups:
       type: select,
       proxies:
         [
+          实验策略,
           节点选择,
-          自动选择,
           香港策略,
           台湾策略,
           日本策略,
           韩国策略,
           狮城策略,
           美国策略,
-          手动切换,
+          全球手动,
           全球直连,
         ],
       icon: 'https://raw.githubusercontent.com/black2c7/Emby-icons/main/Icons/ZDZ2.png',
@@ -238,14 +240,14 @@ proxy-groups:
         [
           全球直连,
           节点选择,
-          自动选择,
+          实验策略,
           香港策略,
           台湾策略,
           日本策略,
           韩国策略,
           狮城策略,
           美国策略,
-          手动切换,
+          全球手动,
         ],
       icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Emby.png',
     }
@@ -256,13 +258,13 @@ proxy-groups:
         [
           香港策略,
           节点选择,
-          自动选择,
+          实验策略,
           台湾策略,
           日本策略,
           韩国策略,
           狮城策略,
           美国策略,
-          手动切换,
+          全球手动,
           全球直连,
         ],
       icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Spotify.png',
@@ -274,13 +276,13 @@ proxy-groups:
         [
           狮城策略,
           节点选择,
-          自动选择,
+          实验策略,
           香港策略,
           台湾策略,
           日本策略,
           韩国策略,
           美国策略,
-          手动切换,
+          全球手动,
           全球直连,
         ],
       icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png',
@@ -290,15 +292,15 @@ proxy-groups:
       type: select,
       proxies:
         [
+          实验策略,
           节点选择,
-          自动选择,
           香港策略,
           台湾策略,
           日本策略,
           韩国策略,
           狮城策略,
           美国策略,
-          手动切换,
+          全球手动,
           全球直连,
         ],
       icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/YouTube.png',
@@ -308,15 +310,15 @@ proxy-groups:
       type: select,
       proxies:
         [
+          实验策略,
           节点选择,
-          自动选择,
           香港策略,
           台湾策略,
           日本策略,
           韩国策略,
           狮城策略,
           美国策略,
-          手动切换,
+          全球手动,
           全球直连,
         ],
       icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Netflix.png',
@@ -328,14 +330,14 @@ proxy-groups:
         [
           全球直连,
           节点选择,
-          自动选择,
+          实验策略,
           香港策略,
           台湾策略,
           日本策略,
           韩国策略,
           狮城策略,
           美国策略,
-          手动切换,
+          全球手动,
         ],
       icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png',
     }
@@ -345,14 +347,14 @@ proxy-groups:
       proxies:
         [
           节点选择,
-          自动选择,
+          实验策略,
           香港策略,
           台湾策略,
           日本策略,
           韩国策略,
           狮城策略,
           美国策略,
-          手动切换,
+          全球手动,
           全球直连,
         ],
       icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png',
@@ -366,7 +368,7 @@ proxy-groups:
   - {
       name: 全球直连,
       type: select,
-      proxies: [DIRECT],
+      proxies: [DIRECT, REJECT],
       icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/China.png',
     }
   - {
@@ -375,17 +377,23 @@ proxy-groups:
       proxies:
         [
           节点选择,
-          自动选择,
+          实验策略,
           香港策略,
           台湾策略,
           日本策略,
           韩国策略,
           狮城策略,
           美国策略,
-          手动切换,
+          全球手动,
           全球直连,
         ],
       icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png',
+    }
+  - {
+      name: 实验策略,
+      type: select,
+      proxies: [实验时延优选策略组, 实验故障转移策略组, 实验负载均衡策略组],
+      icon: 'https://raw.githubusercontent.com/Orz-3/mini/master/Color/Flower.png',
     }
   - {
       name: 香港策略,
@@ -425,6 +433,7 @@ proxy-groups:
     }
 
   # 时延优选策略组
+  - { name: 实验时延优选策略组, <<: *UrlTest, filter: *FilterTest }
   - { name: 香港时延优选策略组, <<: *UrlTest, filter: *FilterHK }
   - { name: 台湾时延优选策略组, <<: *UrlTest, filter: *FilterTW }
   - { name: 日本时延优选策略组, <<: *UrlTest, filter: *FilterJP }
@@ -433,6 +442,7 @@ proxy-groups:
   - { name: 美国时延优选策略组, <<: *UrlTest, filter: *FilterUS }
 
   # 故障转移策略组
+  - { name: 实验故障转移策略组, <<: *FallBack, filter: *FilterTest }
   - { name: 香港故障转移策略组, <<: *FallBack, filter: *FilterHK }
   - { name: 台湾故障转移策略组, <<: *FallBack, filter: *FilterTW }
   - { name: 日本故障转移策略组, <<: *FallBack, filter: *FilterJP }
@@ -441,6 +451,7 @@ proxy-groups:
   - { name: 美国故障转移策略组, <<: *FallBack, filter: *FilterUS }
 
   # 负载均衡策略组
+  - { name: 实验负载均衡策略组, <<: *LoadBalance, filter: *FilterTest }
   - { name: 香港负载均衡策略组, <<: *LoadBalance, filter: *FilterHK }
   - { name: 台湾负载均衡策略组, <<: *LoadBalance, filter: *FilterTW }
   - { name: 日本负载均衡策略组, <<: *LoadBalance, filter: *FilterJP }
@@ -463,17 +474,7 @@ rule-providers:
   BanAD:
     <<: *RuleProviders
     path: './rules/BanAD.list'
-    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/BanAD.list'
-
-  BanProgramAD:
-    <<: *RuleProviders
-    path: './rules/BanProgramAD.list'
-    url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/BanProgramAD.list'
-
-  BanEasyListChina:
-    <<: *RuleProviders
-    path: './rules/BanEasyListChina.list'
-    url: 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list'
+    url: 'https://adrules.top/adrules.list'
 
   GoogleCN:
     <<: *RuleProviders
@@ -484,11 +485,6 @@ rule-providers:
     <<: *RuleProviders
     path: './rules/SteamCN.list'
     url: 'https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/SteamCN.list'
-
-  OwnRules:
-    <<: *RuleProviders
-    path: './rules/OwnRules.list'
-    url: 'https://raw.githubusercontent.com/leon0x00/ProxyResource/refs/heads/main/OwnRules.list'
 
   Microsoft:
     <<: *RuleProviders
@@ -565,8 +561,6 @@ rules:
   - RULE-SET, LocalAreaNetwork, 全球直连
   - RULE-SET, UnBan, 全球直连
   - RULE-SET, BanAD, 全球拦截
-  - RULE-SET, BanProgramAD, 全球拦截
-  - RULE-SET, BanEasyListChina, 全球拦截
   - RULE-SET, GoogleCN, 全球直连
   - RULE-SET, SteamCN, 全球直连
   - RULE-SET, ZDZ, 终点站
